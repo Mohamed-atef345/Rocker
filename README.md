@@ -14,11 +14,11 @@ Clone the repository and build the container:
 ```bash
 git clone <repo-url>
 cd <repo-name>
-docker-compose up --build -d
+docker-compose up -d
 ```
 To access the container:  
 ```bash
-docker exec -it ros_noetic_container bash
+docker exec -it ros_noetic_container_name bash
 ```
 
 ## **Customization**  
