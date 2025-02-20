@@ -1,0 +1,28 @@
+services:
+  ros_noetic_container:
+    build: .
+    image: ros_noetic:latest 
+    container_name: ros_noetic_container
+    network_mode: "host"
+    command: ["service ssh start"]
+    volumes:
+      - /dev:/dev
+      - ./src:/home/ros_noetic/ros_ws/src
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+      - ros_ws:/home/ros_noetic/ros_ws
+      - ./.bashrc:/home/ros_noetic/.bashrc
+      - ./system_new.sh:/home/ros_noetic/system_new.sh
+      - ./three_config.rviz:/home/ros_noetic/three_config.rviz
+    
+    environment:
+    - DISPLAY=${DISPLAY}
+    - QT_X11_NO_MITSHM=1
+        
+    privileged: true
+
+    entrypoint: ["/bin/bash", "-c", "source /opt/ros/noetic/setup.bash && source /home/ros_noetic/.bashrc && exec roscore"]
+
+
+volumes:
+  ros_ws:
