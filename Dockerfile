@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y bash\
     x11-apps \
     xvfb \
     lsb-release \
+    gnome-terminal\
+    sshpass\
     && rm -rf /var/lib/apt/lists/*
 
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' && \
@@ -33,17 +35,11 @@ RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" 
     apt-get update && apt-get install -y python3-catkin-tools && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y sshpass gnome-terminal
-
 RUN useradd -m ros_noetic
 USER ros_noetic
 
-
 WORKDIR /home/ros_noetic/ros_ws
 
-#SHELL ["/bin/bash", "-c"]
-#RUN source /opt/ros/noetic/setup.bash && echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc && source ~/.bashrc
-# CMD ["/bin/bash", "-c", "source /opt/ros/noetic/setup.bash && exec roscore"]
 
 
 
