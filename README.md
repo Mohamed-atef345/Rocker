@@ -18,7 +18,7 @@ docker-compose up -d
 ```
 To access the container:  
 ```bash
-docker exec -it ros_noetic_container_name bash
+docker exec -it ros_noetic_container bash
 ```
 
 ## **Customization**  
