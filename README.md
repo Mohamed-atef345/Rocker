@@ -25,5 +25,3 @@ docker exec -it ros_noetic_container bash
 Modify the `Dockerfile` and `docker-compose.yml` to add additional dependencies or configurations as needed.  
 
 ---
-
-Let me know if you'd like to highlight anything specific! 🚀
