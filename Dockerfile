@@ -39,4 +39,5 @@ RUN useradd -m ros_noetic
 USER root
 RUN usermod --shell /bin/bash ros_noetic
 USER ros_noetic
+
 WORKDIR /home/ros_noetic/ros_ws
