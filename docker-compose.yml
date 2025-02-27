@@ -14,8 +14,7 @@ services:
       - ./.bashrc:/home/ros_noetic/.bashrc
       - ./system_new.sh:/home/ros_noetic/system_new.sh
       - ./three_config.rviz:/home/ros_noetic/three_config.rviz
-      - ./src_cameras:/home/ros_noetic/cameras/src
-      - cameras:/home/ros_noetic/cameras
+    
     
     environment:
     - DISPLAY=${DISPLAY}
@@ -28,4 +27,4 @@ services:
 
 volumes:
   ros_ws:
-  cameras:
+ 
