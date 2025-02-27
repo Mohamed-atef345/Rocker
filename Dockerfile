@@ -36,8 +36,6 @@ RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" 
 RUN apt-get update && apt-get install -y sshpass gnome-terminal
 
 RUN useradd -m ros_noetic
-USER root
-RUN usermod --shell /bin/bash ros_noetic
 USER ros_noetic
 
 WORKDIR /home/ros_noetic/ros_ws
